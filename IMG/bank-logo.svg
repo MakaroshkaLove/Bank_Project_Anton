@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <!-- Hexagon background in lighter lime -->
+  <path d="M40 0 L70 0 L80 20 L70 40 L40 40 L30 20 Z" fill="#90EE90"/>
+  
+  <!-- Letter F in black -->
+  <text x="46" y="30" font-family="Arial" font-weight="bold" font-size="28" fill="black">F</text>
+  
+  <!-- Word БАНК with corrected К -->
+  <text x="90" y="30" font-family="Arial" font-weight="bold" font-size="28" fill="black">БАНК</text>
+</svg>
