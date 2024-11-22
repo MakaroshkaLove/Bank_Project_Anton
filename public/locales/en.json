@@ -1,0 +1,20 @@
+{
+    "greeting": "Hello",
+    "farewell": "Goodbye",
+    "currency_rates": "Currency Rates",
+    "transfers": "Transfers and Top-ups",
+    "support": "Support",
+    "debit_card_description": "Lime debit card cashback in hryvnia on everything",
+    "subtitle": "Choose categories with increased cashback when issuing the card before October 31. Get 10% instead of 5% until the end of November.",
+    "open_card": "Open a card",
+    "debit_cards": "Debit Cards",
+    "credit_cards": "Credit Cards",
+    "loans": "Loans",
+    "deposits": "Deposits",
+    "investments": "Investments",
+    "recommended_products": "Recommended Products",
+    "services_title": "Services and Features",
+    "additional_services": "Additional Services",
+    "help": "Help",
+    "reviews": "F-Bank Reviews"
+}

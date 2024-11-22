@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-БАНК</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" type="img/jpeg" href="img/logoo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="IMG/bank-logo-smaller.png" alt="Logo" class="logo-img"></a>
+        </div>
+
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav" id="nav">
+            <a href="Money.html" data-translate="Курси валют">Курси валют</a>
+            <a href="perevod.html" data-translate="Перекази та поповнення">Перекази та поповнення</a>
+            <a href="suport.html" data-translate="Підтримка">Підтримка</a>
+        </nav>
+
+        <div class="right-section">
+            <div class="language-switcher" id="languageSwitcher">
+                <img src="https://img.icons8.com/color/48/earth-planet.png" alt="Switch Language" id="languageIcon">
+            </div>
+            <div class="theme-toggle">
+                <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Toggle Theme" id="theme-icon" class="theme-icon"> 
+            </div>
+            <div class="auth">
+                <a href="signup.html" class="lang">
+                    <span data-translate="Особистий кабінет">Особистий кабінет</span>
+                    <img src="IMG/room.svg" alt="Особистий кабінет" class="auth-icon">
+                </a>
+            </div>
+            
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 data-translate="Курси популярних валют для приватних осіб">Курси популярних валют для приватних осіб</h1>
+        <p data-translate="При переведенні між своїми рахунками та оплаті послуг в сервісах F‑Банку. Дійсні на 20:08 по Україні, 20 листопада 2024">При переведенні між своїми рахунками та оплаті послуг в сервісах F‑Банку. Дійсні на 20:08 по Україні, 20 листопада 2024</p>
+
+        <table class="currency-table">
+            <thead>
+                <tr>
+                    <th data-translate="Валюта">Валюта</th>
+                    <th data-translate="Продати">Продати</th>
+                    <th data-translate="Купити">Купити</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Долар (USD)</td>
+                    <td>38.20</td>
+                    <td>37.50</td>
+                </tr>
+                <tr>
+                    <td>Євро (EUR)</td>
+                    <td>41.00</td>
+                    <td>40.30</td>
+                </tr>
+                <tr>
+                    <td>Юані (CNY)</td>
+                    <td>5.30</td>
+                    <td>5.00</td>
+                </tr>
+                <tr>
+                    <td>Фунт (GBP)</td>
+                    <td>45.00</td>
+                    <td>44.20</td>
+                </tr>
+                <tr>
+                    <td>Японська єна (JPY)</td>
+                    <td>0.28</td>
+                    <td>0.27</td>
+                </tr>
+                <tr>
+                    <td>Гривня (UAH)</td>
+                    <td>0.65</td>
+                    <td>0.62</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="form-section">
+            <h2 data-translate="Курси валют для різних клієнтів та операцій">Курси валют для різних клієнтів та операцій</h2>
+            <p data-translate="Виберіть валюту для переведення:">Виберіть валюту для переведення:</p>
+            <select id="from-currency">
+                <option value="USD">Долар (USD)</option>
+                <option value="EUR">Євро (EUR)</option>
+                <option value="CNY">Юані (CNY)</option>
+                <option value="GBP">Фунт (GBP)</option>
+                <option value="JPY">Японська єна (JPY)</option>
+                <option value="UAH">Гривня (UAH)</option>
+            </select>
+
+            <p data-translate="Виберіть валюту для отримання:">Виберіть валюту для отримання:</p>
+            <select id="to-currency">
+                <option value="USD">Долар (USD)</option>
+                <option value="EUR">Євро (EUR)</option>
+                <option value="CNY">Юані (CNY)</option>
+                <option value="GBP">Фунт (GBP)</option>
+                <option value="JPY">Японська єна (JPY)</option>
+                <option value="UAH">Гривня (UAH)</option>
+            </select>
+
+            <p data-translate="Введіть кількість для переведення:">Введіть кількість для переведення:</p>
+            <input type="number" id="amount" placeholder="Сума" min="0" step="any" data-translate="Сума">
+
+
+
+            <br>
+            <button class="transfer-button" onclick="calculateTransfer()" data-translate="Перевести">Перевести</button>
+        </div>
+
+        <div id="transfer-result" class="transfer-result"></div>
+    </div>
+
+    <footer>
+        <div class="footer-line"></div>
+        <div class="footer-top">
+            <div class="logo-block">
+                <img src="IMG/bank-logo-smaller.png" alt="Логотип" class="logo">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-translate="АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.">АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.</p>
+            <p data-translate="© 2024-2024, АТ «FБанк», офіційний сайт.">© 2024-2024, АТ «FБанк», офіційний сайт.</p>
+        </div>
+    </footer>
+	   <script>
+        
+        const exchangeRates = {
+            'USD': { 'USD': 1, 'EUR': 0.94, 'CNY': 6.6, 'GBP': 0.82, 'JPY': 135.3, 'UAH': 75 },
+            'EUR': { 'USD': 1.06, 'EUR': 1, 'CNY': 7.02, 'GBP': 0.87, 'JPY': 143.7, 'UAH': 79.5 },
+            'CNY': { 'USD': 0.15, 'EUR': 0.14, 'CNY': 1, 'GBP': 0.12, 'JPY': 20.45, 'UAH': 10.7 },
+            'GBP': { 'USD': 1.22, 'EUR': 1.15, 'CNY': 8.4, 'GBP': 1, 'JPY': 164.6, 'UAH': 96.6 },
+            'JPY': { 'USD': 0.0074, 'EUR': 0.0069, 'CNY': 0.049, 'GBP': 0.0061, 'JPY': 1, 'UAH': 0.59 },
+            'UAH': { 'USD': 0.013, 'EUR': 0.012, 'CNY': 0.093, 'GBP': 0.010, 'JPY': 1.7, 'UAH': 1 }
+        };
+
+        
+        function calculateTransfer() {
+            const fromCurrency = document.getElementById('from-currency').value;
+            const toCurrency = document.getElementById('to-currency').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            if (fromCurrency === toCurrency) {
+                document.getElementById('transfer-result').innerHTML = "Виберіть різні валюти для переведення.";
+                return;
+            }
+
+            if (isNaN(amount) || amount <= 0) {
+                document.getElementById('transfer-result').innerHTML = "Будь ласка, введіть коректну суму.";
+                return;
+            }
+
+            const rate = exchangeRates[fromCurrency][toCurrency];
+            const result = (amount * rate).toFixed(2);
+            document.getElementById('transfer-result').innerHTML = `${amount} ${fromCurrency} = ${result} ${toCurrency} (курс: ${rate.toFixed(2)})`;
+        }
+    </script>
+    <script src="script.js"></script>
+    <script>
+
+const translations = {
+    en: {
+        "Курси валют": "Exchange Rates",
+        "Перекази та поповнення": "Transfers and Top-ups",
+        "Підтримка": "Support",
+        "Особистий кабінет": "Personal Account",
+        "Курси популярних валют для приватних осіб": "Exchange rates for individuals",
+        "При переведенні між своїми рахунками та оплаті послуг в сервісах F‑Банку. Дійсні на 20:08 по Україні, 20 листопада 2024": "When transferring between your accounts and paying for services in F-Bank services. Valid at 20:08 in Ukraine, November 20, 2024.",
+        "Валюта": "Currency",
+        "Продати": "Sell",
+        "Введіть кількість для переведення:": "Enter amount to transfer:", 
+        "Купити": "Buy",
+        "Сума": "Amount",
+        "Виберіть валюту для переведення:": "Select currency for transfer:",
+        "Виберіть валюту для отримання:": "Select currency to receive:",
+        "Введіть кількість для переведення:": "Enter amount to transfer:",
+        "Перевести": "Convert",
+        "АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.": "F-Bank uses cookies to personalize services and improve user experience.",
+        "© 2024-2024, АТ «FБанк», офіційний сайт.": "© 2024-2024, F-Bank JSC, official website."
+    },
+    uk: {
+        "Курси валют": "Курси валют",
+        "Перекази та поповнення": "Перекази та поповнення",
+        "Підтримка": "Підтримка",
+        "Особистий кабінет": "Особистий кабінет",
+        "Курси популярних валют для приватних осіб": "Курси популярних валют для приватних осіб",
+        "При переведенні між своїми рахунками та оплаті послуг в сервісах F‑Банку. Дійсні на 20:08 по Україні, 20 листопада 2024": "При переведенні між своїми рахунками та оплаті послуг в сервісах F‑Банку. Дійсні на 20:08 по Україні, 20 листопада 2024",
+        "Валюта": "Валюта",
+        "Продати": "Продати",
+        "Сума": "Сума",
+        "Введіть кількість для переведення:": "Введіть кількість для переведення:", 
+        "Купити": "Купити",
+        "Виберіть валюту для переведення:": "Виберіть валюту для переведення:",
+        "Виберіть валюту для отримання:": "Виберіть валюту для отримання:",
+        "Введіть кількість для переведення:": "Введіть кількість для переведення:",
+        "Перевести": "Перевести",
+        "АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.": "АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.",
+        "© 2024-2024, АТ «FБанк», офіційний сайт.": "© 2024-2024, АТ «FБанк», офіційний сайт."
+    }
+};
+
+// Устанавливаем текущий язык
+let currentLanguage = "uk"; 
+
+// Функция для перевода контента
+function translatePage() {
+    const allTranslatableElements = document.querySelectorAll("[data-translate]");
+    
+    // Обновляем текст на странице в зависимости от текущего языка
+    allTranslatableElements.forEach(el => {
+        const translationKey = el.getAttribute("data-translate");
+
+        if (translations[currentLanguage][translationKey]) {
+            if (el.placeholder) {
+                el.placeholder = translations[currentLanguage][translationKey]; // Для placeholder
+            } else {
+                el.textContent = translations[currentLanguage][translationKey]; // Для текста
+            }
+        }
+    });
+}
+
+// Обработчик события для переключения языка
+document.getElementById("languageSwitcher").addEventListener("click", () => {
+    // Переключаем язык
+    currentLanguage = currentLanguage === "uk" ? "en" : "uk";
+    translatePage();
+});
+
+// Изначальная загрузка страницы с правильным языком
+window.onload = translatePage;
+
+</script>
+</body>
+</html>

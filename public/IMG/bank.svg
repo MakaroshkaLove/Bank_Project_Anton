@@ -1,0 +1,66 @@
+<svg
+  width="900"
+  height="300"
+  viewBox="0 0 900 300"
+  xmlns="http://www.w3.org/2000/svg"
+  style="background-color: white;"
+>
+  <!-- Градиент для карты -->
+  <defs>
+    <linearGradient id="limeGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bef264" />
+      <stop offset="100%" stop-color="#84cc16" />
+    </linearGradient>
+  </defs>
+
+  <!-- Банковская карта -->
+  <rect
+    x="20"
+    y="20"
+    width="400"
+    height="200"
+    rx="20"
+    fill="url(#limeGradient)"
+    style="box-shadow: 5px 5px 15px rgba(0,0,0,0.1);"
+  />
+
+  <!-- Чип -->
+  <rect
+    x="50"
+    y="80"
+    width="40"
+    height="30"
+    rx="5"
+    fill="gray"
+  />
+
+  <!-- Логотип банка -->
+  <circle cx="380" cy="50" r="16" fill="white" />
+  <text x="375" y="55" font-size="20" font-weight="bold" fill="black">F</text>
+
+  <!-- Текст LIME -->
+  <text x="50" y="190" font-size="18" fill="white">LIME</text>
+
+  <!-- 10% блок -->
+  <g transform="translate(450, 60)">
+    <text font-size="64" font-weight="bold" fill="#facc15">10</text>
+    <circle cx="120" cy="-10" r="20" fill="#facc15" />
+    <text x="113" y="-4" font-size="16" font-weight="bold" fill="black">%</text>
+  </g>
+
+  <!-- Стек монет -->
+  <g transform="translate(450, 150)">
+    <rect y="0" width="64" height="4" fill="#d1d5db" rx="2" />
+    <rect y="10" width="64" height="4" fill="#d1d5db" rx="2" />
+    <rect y="20" width="64" height="4" fill="#d1d5db" rx="2" />
+  </g>
+
+  <!-- Категории -->
+  <g transform="translate(450, 200)">
+    <circle cx="0" cy="0" r="20" fill="#7c3aed" />
+    <circle cx="60" cy="0" r="20" fill="#2dd4bf" />
+    <circle cx="120" cy="0" r="20" fill="#fb923c" />
+    <circle cx="180" cy="0" r="20" fill="#4ade80" />
+    <circle cx="240" cy="0" r="20" fill="#f472b6" />
+  </g>
+</svg>

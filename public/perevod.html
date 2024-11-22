@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-BANK</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" type="img/jpeg" href="img/logoo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="IMG/bank-logo-smaller.png" alt="Logo" class="logo-img"></a>
+        </div>
+    
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    
+        
+        <nav class="nav" id="nav">
+            <a href="Money.html">Курси валют</a>
+            <a href="perevod.html">Перекази та поповнення</a>
+            <a href="suport.html">Підтримка</a>
+        </nav>
+    
+        
+        <div class="right-section">
+            <div class="language-switcher" id="languageSwitcher">
+                <img src="https://img.icons8.com/color/48/earth-planet.png" alt="Switch Language" id="languageIcon">
+            </div>
+            <div class="theme-toggle">
+                <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Toggle Theme" id="theme-icon" class="theme-icon"> 
+            </div>
+            <div class="auth">
+                <a href="signup.html" id="login-link">Особистий кабінет <img src="IMG/room.svg" alt="" class="auth-icon"></a>
+            </div>
+        </div>
+    </header>
+    <div class="transfer-container">
+        <h1>Переказ з карти на карту</h1>
+        <p>Будь ласка, заповніть усі поля та натисніть «Переказати»</p>
+        
+        
+        <div class="transfer-forms">
+            <div class="form-section">
+                <h2>З карти</h2>
+                <input type="text" id="from-card" placeholder="Номер карти" maxlength="19" oninput="formatCardNumber(this)">
+                <p>16 цифр (4 групи по 4 цифри)</p>
+            </div>
+            <div class="arrow">→</div>
+            <div class="form-section">
+                <h2>На карту</h2>
+                <input type="text" id="to-card" placeholder="Номер карти" maxlength="19" oninput="formatCardNumber(this)">
+                <p>16 цифр (4 групи по 4 цифри)</p>
+            </div>
+        </div>
+
+        <div class="amount-section">
+            <input type="text" id="amount" placeholder="Сума, ₴">
+        </div>
+
+        <button class="transfer-button" onclick="startGame()">Переказати</button>
+
+        <p id="status"></p>
+
+        <div id="money" class="money">💸</div>
+    </div>
+
+    
+
+    
+    <footer>
+        <div class="footer-line"></div>
+        <div class="footer-top">
+            <div class="logo-block">
+                <img src="IMG/bank-logo-smaller.png" alt="Логотип" class="logo">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом. «Cookie» — це невеликі файли, що містять інформацію про попередні відвідування вебсайту. Якщо ви не хочете використовувати файли «cookie», змініть налаштування браузера.</p>
+            <p>© 2024-2024, АТ «FБанк», офіційний сайт.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+function startGame() {
+    const fromCard = document.getElementById("from-card").value.replace(/\s/g, ""); 
+    const toCard = document.getElementById("to-card").value.replace(/\s/g, ""); 
+    const amount = document.getElementById("amount").value;
+    const status = document.getElementById("status");
+    const money = document.getElementById("money");
+
+
+    if (!fromCard || !toCard || !amount) {
+        status.innerHTML = "Будь ласка, заповніть всі поля.";
+        return;
+    }
+
+    const cardRegex = /^\d{16}$/; 
+    if (!cardRegex.test(fromCard) || !cardRegex.test(toCard)) {
+        status.innerHTML = "Номер карти повинен містити рівно 16 цифр.";
+        return;
+    }
+
+    if (isNaN(amount) || amount <= 0) {
+        status.innerHTML = "Введіть коректну суму.";
+        return;
+    }
+
+
+    money.style.display = "block";
+    money.style.left = "50%";
+    money.style.top = "50%";
+    money.style.transform = "translate(-50%, -50%)";
+    status.innerHTML = "Гроші відправляються...";
+
+
+    setTimeout(() => {
+        money.style.display = "none";
+        status.innerHTML = "Гроші втекли... спробуйте знову!";
+    }, 3000); 
+}
+
+
+function formatCardNumber(input) {
+    let value = input.value.replace(/\D/g, ""); 
+    value = value.substring(0, 16); 
+    const formattedValue = value.replace(/(\d{4})(?=\d)/g, "$1 "); 
+    input.value = formattedValue;
+}
+
+        </script>
+<script>
+
+const translations = {
+    en: {
+        "header-link1": "Currency Rates",
+        "header-link2": "Transfers and Top-ups",
+        "header-link3": "Support",
+        "main-title": "Debit Lime Card with Cashback in UAH for Everything",
+        "main-subtitle": "Choose categories for increased cashback when applying for the card by October 31. Get 10% instead of 5% until the end of November.",
+        "card-button": "Apply for a Card",
+        "service1": "Currency Rates",
+        "service2": "Transfers and Top-ups",
+        "service3": "Invite a Friend",
+        "footer-note": "JSC \"F Bank\" uses cookies for personalization and to enhance the user experience. Cookies are small files containing information about previous visits to the website. If you do not want to use cookies, change your browser settings.",
+        "footer-bottom": "© 2024, JSC \"F Bank\", official website.",
+    },
+    uk: {
+        "header-link1": "Курси валют",
+        "header-link2": "Перекази та поповнення",
+        "header-link3": "Підтримка",
+        "main-title": "Дебетова карта Lime кешбеком гривнями на все",
+        "main-subtitle": "Виберіть категорії підвищеного кешбеку під час оформлення картки до 31 жовтня. Отримуйте 10% замість 5% до кінця листопада.",
+        "card-button": "Оформити картку",
+        "service1": "Курси валют",
+        "service2": "Перекази та поповнення",
+        "service3": "Приведи друга",
+        "footer-note": "АТ \"F Банк\" використовує файли \"cookie\" для персоналізації та підвищення зручності користування. Якщо ви не хочете використовувати файли \"cookie\", змініть налаштування браузера.",
+        "footer-bottom": "© 2024, АТ \"F Банк\", офіційний сайт.",
+    },
+};
+
+let currentLanguage = 'uk'; // Default language is Ukrainian
+
+// Language switcher function
+document.getElementById("languageSwitcher").addEventListener("click", () => {
+    currentLanguage = currentLanguage === "en" ? "uk" : "en"; // Toggle between English and Ukrainian
+    switchLanguage(currentLanguage);
+});
+
+// Function to switch language
+function switchLanguage(lang) {
+    document.querySelector('a[href="Money.html"]').textContent = translations[lang]["header-link1"];
+    document.querySelector('a[href="perevod.html"]').textContent = translations[lang]["header-link2"];
+    document.querySelector('a[href="suport.html"]').textContent = translations[lang]["header-link3"];
+    document.querySelector(".text").textContent = translations[lang]["main-title"];
+    document.querySelector(".subtitle").textContent = translations[lang]["main-subtitle"];
+    document.querySelector(".custom-btn span").textContent = translations[lang]["card-button"];
+    document.querySelector(".block-title2").textContent = translations[lang]["service1"];
+    document.querySelector(".block-title3").textContent = translations[lang]["service2"];
+    document.querySelector(".block-title4").textContent = translations[lang]["service3"];
+    document.querySelector(".footer-bottom p").textContent = translations[lang]["footer-note"];
+    document.querySelector(".footer-bottom:last-child p").textContent = translations[lang]["footer-bottom"];
+}
+
+</script>
+</body>
+</html>
