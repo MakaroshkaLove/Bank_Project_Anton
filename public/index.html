@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <div id="loading-screen">
+        <div class="loading-text">F-Bank Loading...</div>
+      </div>
     <header class="header">
         <div class="logo">
             <a href="index.html"><img src="IMG/bank-logo-smaller.png" alt="Logo" class="logo-img"></a>
@@ -132,7 +135,7 @@
     
 </div>  
     <div class="content">
-        <h1 class="text" data-translate="">Додатково</h1>
+        <h1 class="text" data-translate="Додатково">Додатково</h1>
         <div class="additional-blocks">
             <div class="additional-block">
                 <div class="icon-help">🔵</div>
@@ -158,79 +161,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів...</p>
+                <p data-translate="АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів...">АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів...</p>
             </div>
-            <p>© 2024-2024, АТ «FБанк», офіційний сайт.</p>
+            <p data-translate="© 2024-2024, АТ «FБанк», офіційний сайт.">© 2024-2024, АТ «FБанк», офіційний сайт.</p>
         </footer>
     </footer>
     <script src="script.js"></script>
     <script>
-
-        const translations = {
-            en: {
-                "Курси валют": "Exchange Rates",
-                "Перекази та поповнення": "Transfers and Top-ups",
-                "Підтримка": "Support",
-                "Особистий кабінет": "Personal Account",
-                "Дебетова карта Lime кешбеком гривнями на все": "Debit Card with Cashback in Local Currency",
-                "Виберіть категорії підвищеного кешбеку під час оформлення картки до 31 жовтня. Отримуйте 10% замість 5% до кінця листопада.": "Choose higher cashback categories until October 31. Get 10% instead of 5% till November.",
-                "Оформити картку": "Apply for a Card",
-                "Дебетові карти": "Debit Cards",
-                "Кредитні картки": "Credit Cards",
-                "Відкрийте вклад з поповненням та частковим вилученням. Щомісяця отримуйте відсотки на картку чи вклад.": "Open a deposit with replenishment and partial withdrawal. Receive monthly interest on a card or deposit.",
-                "Кредити": "Loans",
-
-                "Інвестиції F-Банку": "Investments of F-Bank",
-                "Український інвестиційний чемпіонат із загальним призовим фондом 150 000 000 ₴.": "Ukrainian investment championship with a total prize fund of 150,000,000 ₴.",
-                "Докладніше": "Read more",
-                "Відкрити вклад": "Open the attachment",
-                "Сервіси та послуги": "Services and services",
-                "Курси валют": "Exchange rates",
-                "Переказ між своїми рахунками, оплата послуг та зняття готівки у сервісах F-Банку.": "Transfer between your accounts, pay for services and withdraw cash from F-Bank services.",
-                "Перекази та поповнення": "Transfers and top-ups",
-                "З картки на карту або на рахунок F-Банку.": "From card to card or to F-Bank account.",
-                "Поповнити або перевести": "Top up or transfer",
-                "Read more": "Read more",
-                "Дивитися": "Watch",
-                "Додатково": "Additionally",
-                "Допомога": "Help",
-                "Відповідаємо на запитання щодо всіх продуктів.": "We answer questions about all products.",
-                "F-Банк Відгуки": "F-Bank Reviews",
-                "Вибирайте продукти F-Банк, магазини, ресторани, сервіси та бренди на основі реальних відгуків.": "Choose F-Bank products, shops, restaurants, services and brands based on real reviews.",
-                
-                "Вклади": "Deposits",
-                "Рекомендовані продукти": "Recommended products",
-                "Інвестиції": "Investments",
-                "АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів...": "JSC «FBank» uses cookies to personalize services...",
-                "© 2024-2024, АТ «FБанк», офіційний сайт.": "© 2024-2024, JSC «FBank», official website."
-            },
-            uk: {
-                // Здесь пусто, поскольку текст уже на украинском
-            }
-        };
-    
-        let currentLanguage = "uk"; // Начальный язык
-    
-        document.getElementById("languageSwitcher").addEventListener("click", () => {
-            const allTranslatableElements = document.querySelectorAll("[data-translate]");
-            
-            // Меняем язык
-            currentLanguage = currentLanguage === "uk" ? "en" : "uk";
-    
-            // Обновляем текст на странице
-            allTranslatableElements.forEach(el => {
-                if (currentLanguage === "en") {
-                    el.textContent = translations.en[el.textContent] || el.textContent;
-                } else {
-                    // Возврат текста к исходному украинскому
-                    el.textContent = Object.keys(translations.en).find(key => translations.en[key] === el.textContent) || el.textContent;
-                }
-            });
-        });
-        document.querySelectorAll("[data-translate]").forEach(el => {
-    const originalText = el.getAttribute("data-translate");
-    el.textContent = translations[currentLanguage][originalText] || originalText;
-});
+ 
 
     </script>
     

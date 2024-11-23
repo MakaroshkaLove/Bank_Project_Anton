@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="loading-screen">
+        <div class="loading-text">F-Bank Loading...</div>
+      </div>
     <header class="header">
         <div class="logo">
             <a href="index.html"><img src="IMG/bank-logo-smaller.png" alt="Logo" class="logo-img"></a>
@@ -171,68 +174,6 @@
     </script>
     <script src="script.js"></script>
     <script>
-
-const translations = {
-    en: {
-        "Курси валют": "Exchange Rates",
-        "Перекази та поповнення": "Transfers and Top-ups",
-        "Підтримка": "Support",
-        "Особистий кабінет": "Personal Account",
-        "Курси популярних валют для приватних осіб": "Exchange rates for individuals",
-        "При переведенні між своїми рахунками та оплаті послуг в сервісах F‑Банку. Дійсні на 20:08 по Україні, 20 листопада 2024": "When transferring between your accounts and paying for services in F-Bank services. Valid at 20:08 in Ukraine, November 20, 2024.",
-        "Валюта": "Currency",
-        "Продати": "Sell",
-        "Введіть кількість для переведення:": "Enter amount to transfer:", 
-        "Купити": "Buy",
-        "Сума": "Amount",
-        "Виберіть валюту для переведення:": "Select currency for transfer:",
-        "Виберіть валюту для отримання:": "Select currency to receive:",
-        "Введіть кількість для переведення:": "Enter amount to transfer:",
-        "Перевести": "Convert",
-        "АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.": "F-Bank uses cookies to personalize services and improve user experience.",
-        "© 2024-2024, АТ «FБанк», офіційний сайт.": "© 2024-2024, F-Bank JSC, official website."
-    },
-    uk: {
-        "Курси валют": "Курси валют",
-        "Перекази та поповнення": "Перекази та поповнення",
-        "Підтримка": "Підтримка",
-        "Особистий кабінет": "Особистий кабінет",
-        "Курси популярних валют для приватних осіб": "Курси популярних валют для приватних осіб",
-        "При переведенні між своїми рахунками та оплаті послуг в сервісах F‑Банку. Дійсні на 20:08 по Україні, 20 листопада 2024": "При переведенні між своїми рахунками та оплаті послуг в сервісах F‑Банку. Дійсні на 20:08 по Україні, 20 листопада 2024",
-        "Валюта": "Валюта",
-        "Продати": "Продати",
-        "Сума": "Сума",
-        "Введіть кількість для переведення:": "Введіть кількість для переведення:", 
-        "Купити": "Купити",
-        "Виберіть валюту для переведення:": "Виберіть валюту для переведення:",
-        "Виберіть валюту для отримання:": "Виберіть валюту для отримання:",
-        "Введіть кількість для переведення:": "Введіть кількість для переведення:",
-        "Перевести": "Перевести",
-        "АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.": "АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.",
-        "© 2024-2024, АТ «FБанк», офіційний сайт.": "© 2024-2024, АТ «FБанк», офіційний сайт."
-    }
-};
-
-// Устанавливаем текущий язык
-let currentLanguage = "uk"; 
-
-// Функция для перевода контента
-function translatePage() {
-    const allTranslatableElements = document.querySelectorAll("[data-translate]");
-    
-    // Обновляем текст на странице в зависимости от текущего языка
-    allTranslatableElements.forEach(el => {
-        const translationKey = el.getAttribute("data-translate");
-
-        if (translations[currentLanguage][translationKey]) {
-            if (el.placeholder) {
-                el.placeholder = translations[currentLanguage][translationKey]; // Для placeholder
-            } else {
-                el.textContent = translations[currentLanguage][translationKey]; // Для текста
-            }
-        }
-    });
-}
 
 // Обработчик события для переключения языка
 document.getElementById("languageSwitcher").addEventListener("click", () => {

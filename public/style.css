@@ -1,3 +1,114 @@
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #333333, #1a1a1a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999; 
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  body.loaded #loading-screen {
+    opacity: 0;
+    pointer-events: none;
+    display: none; 
+  }
+  
+  body.loaded #main-content {
+    display: block;
+    opacity: 1;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .loading-text {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #a1e665;
+    text-shadow: 0px 4px 10px rgba(161, 230, 101, 0.8);
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  #main-content {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  @keyframes content-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .loading-text {
+      font-size: 1.8rem; 
+    }
+  
+    #main-content h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .loading-text {
+      font-size: 1.4rem; 
+    }
+  
+    #main-content h1 {
+      font-size: 1.2rem;
+    }
+  }
+      
 .header {
     height: 40px; 
     padding: 10px 20px;
@@ -35,7 +146,7 @@ body{
 }
 
 .language-switcher:hover img {
-    transform: scale(1.2); /* Увеличение при наведении */
+    transform: scale(1.2); 
 }
 
 .logo {

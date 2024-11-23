@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div id="loading-screen">
+        <div class="loading-text">F-Bank Loading...</div>
+      </div>
     <header class="header">
         <div class="logo">
             <a href="index.html"><img src="IMG/bank-logo-smaller.png" alt="Logo" class="logo-img"></a>
@@ -25,9 +27,9 @@
     
         
         <nav class="nav" id="nav">
-            <a href="Money.html">Курси валют</a>
-            <a href="perevod.html">Перекази та поповнення</a>
-            <a href="suport.html">Підтримка</a>
+            <a href="Money.html" data-translate="Курси валют">Курси валют</a>
+            <a href="perevod.html" data-translate="Перекази та поповнення">Перекази та поповнення</a>
+            <a href="suport.html" data-translate="Підтримка">Підтримка</a>
         </nav>
     
         
@@ -39,67 +41,61 @@
                 <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Toggle Theme" id="theme-icon" class="theme-icon"> 
             </div>
             <div class="auth">
-                <a href="signup.html" id="login-link">Особистий кабінет <img src="IMG/room.svg" alt="" class="auth-icon"></a>
+                <a href="signup.html" class="lang">
+                    <span data-translate="Особистий кабінет">Особистий кабінет</span>
+                    <img src="IMG/room.svg" alt="Особистий кабінет" class="auth-icon">
+                </a>
             </div>
-        </div>
     </header>
 
     
     <div class="content">
-        <h1 class="text">Дебетові карти</h1>
-        <p class="subtitle">Дебетова карта - найкращий спосіб оплачувати покупки та отримувати кешбек. З дебетовими картами F-Банку клієнти отримують<br> кешбек карбованцями або бонусами за кожну покупку.</p>
+        <h1 class="text" data-translate="Дебетові карти">Дебетові карти</h1>
+        <p class="subtitle" data-translate="Дебетова карта Lime кешбеком гривнями на все">Дебетова карта Lime кешбеком гривнями на все</p>
         
         <div class="debit-green">
             <div>
                 <div class="debit-label">
-                    <span>Для покупок</span> 
+                    <span data-translate="Для покупок">Для покупок</span> 
                 </div>
-                <h2 class="debit-title">Преміальна карта Lime Premium</h2>
-                <p class="debit-description">Перекази до 100 000 ₴ на місяць...</p>
+                <h2 class="debit-title" data-translate="Преміальна карта Lime Premium">Преміальна карта Lime Premium</h2>
+                <p class="debit-description" data-translate="Перекази до 100 000 ₴ на місяць...">Перекази до 100 000 ₴ на місяць...</p>
                 <div class="debit-info">
                     <div>
-                        <p>До 60 000 ₴/міс</p>
-                        <span>Кешбек від банку та партнерів</span>
-                    </div>
-                    <div>
-                        <p>От 2 проходов</p>
-                        <span>У бізнес-зали по всьому світу</span>
-                    </div>
-                    <div>
-                        <p>0 ₽ или 1 990 ₴</p>
-                        <span>Безкоштовно при виконанні умов</span>
+                        <p data-translate="До 60 000 ₴/міс">До 60 000 ₴/міс</p>
+                        <span data-translate="Кешбек від банку та партнерів">Кешбек від банку та партнерів</span>
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="signup.html" class="btn-primary">Оформити картку</a>
+                    <a href="signup.html" class="btn-primary" data-translate="Оформити картку">Оформити картку</a>
                 </div>
             </div>
             <img src="IMG/debetcard.png" alt="Карта">
         </div>
-    
+    </div>
     <div class="debit-white">
         <div>
             <div class="debit-label">
-                <span>Для дітей</span>
+                <span data-translate="Для дітей">Для дітей</span>
             </div>
-            <h2 class="debit-title">Дитяча карта «Джуніор»</h2>
-            <p class="debit-description">Дебетова картка для дітей віком до 14 років. Готує до дорослого життя, вчить витрачати гроші<br> з розумом та самостійно збирати.</p>
+            <h2 class="debit-title" data-translate="Дитяча карта «Джуніор»">Дитяча карта «Джуніор»</h2>
+            <p class="debit-description" data-translate="Дебетова картка для дітей віком до 14 років. Готує до дорослого життя, вчить витрачати гроші з розумом та самостійно збирати.">Дебетова картка для дітей віком до 14 років. Готує до дорослого життя, вчить витрачати гроші з розумом та самостійно збирати.</p>
             <div class="debit-info">
                 <div>
-                    <p>Кешбек до 30%</p>
-                    <span>За покупки за спецпропозиціями</span>
+                    <p data-translate="Кешбек до 30%">Кешбек до 30%</p>
+                    <span data-translate="За покупки за спецпропозиціями">За покупки за спецпропозиціями</span>
                 </div>
                 <div>
-                    <p>1% кешбека</p>
-                    <span>Бонусами за інші покупки</span>
+                    <p data-translate="1% кешбека">1% кешбека</p>
+                    <span data-translate="Бонусами за інші покупки">Бонусами за інші покупки</span>
                 </div>
                 <div>
-                    <p>0 ₽ в місяць</p>
-                    <span>Вартість обслуговування</span>
+                    <p data-translate="0 ₴ в місяць">0 ₴ в місяць</p>
+                    <span data-translate="Вартість обслуговування">Вартість обслуговування</span>
                 </div>
             </div>
             <div class="buttons">
-                <a href="#" class="btn-primary">Оформити картку</a>
+                <a href="#" class="btn-primary" data-translate="Оформити картку">Оформити картку</a>
             </div>
         </div>
         <img src="IMG/junior.png" alt="карта">
@@ -115,65 +111,13 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом. «Cookie» — це невеликі файли, що містять інформацію про попередні відвідування вебсайту. Якщо ви не хочете використовувати файли «cookie», змініть налаштування браузера.</p>
-            <p>© 2024-2024, АТ «FБанк», офіційний сайт.</p>
+            <p data-translate="АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом. «Cookie» — це невеликі файли, що містять інформацію про попередні відвідування вебсайту. Якщо ви не хочете використовувати файли «cookie», змініть налаштування браузера.">АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом. «Cookie» — це невеликі файли, що містять інформацію про попередні відвідування вебсайту. Якщо ви не хочете використовувати файли «cookie», змініть налаштування браузера.</p>
+            <p data-translate="© 2024-2024, АТ «FБанк», офіційний сайт.">© 2024-2024, АТ «FБанк», офіційний сайт.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 <script>
-
-const translations = {
-    en: {
-        "header-link1": "Currency Rates",
-        "header-link2": "Transfers and Top-ups",
-        "header-link3": "Support",
-        "main-title": "Debit Lime Card with Cashback in UAH for Everything",
-        "main-subtitle": "Choose categories for increased cashback when applying for the card by October 31. Get 10% instead of 5% until the end of November.",
-        "card-button": "Apply for a Card",
-        "service1": "Currency Rates",
-        "service2": "Transfers and Top-ups",
-        "service3": "Invite a Friend",
-        "footer-note": "JSC \"F Bank\" uses cookies for personalization and to enhance the user experience. Cookies are small files containing information about previous visits to the website. If you do not want to use cookies, change your browser settings.",
-        "footer-bottom": "© 2024, JSC \"F Bank\", official website.",
-    },
-    uk: {
-        "header-link1": "Курси валют",
-        "header-link2": "Перекази та поповнення",
-        "header-link3": "Підтримка",
-        "main-title": "Дебетова карта Lime кешбеком гривнями на все",
-        "main-subtitle": "Виберіть категорії підвищеного кешбеку під час оформлення картки до 31 жовтня. Отримуйте 10% замість 5% до кінця листопада.",
-        "card-button": "Оформити картку",
-        "service1": "Курси валют",
-        "service2": "Перекази та поповнення",
-        "service3": "Приведи друга",
-        "footer-note": "АТ \"F Банк\" використовує файли \"cookie\" для персоналізації та підвищення зручності користування. Якщо ви не хочете використовувати файли \"cookie\", змініть налаштування браузера.",
-        "footer-bottom": "© 2024, АТ \"F Банк\", офіційний сайт.",
-    },
-};
-
-let currentLanguage = 'uk'; // Default language is Ukrainian
-
-// Language switcher function
-document.getElementById("languageSwitcher").addEventListener("click", () => {
-    currentLanguage = currentLanguage === "en" ? "uk" : "en"; // Toggle between English and Ukrainian
-    switchLanguage(currentLanguage);
-});
-
-// Function to switch language
-function switchLanguage(lang) {
-    document.querySelector('a[href="Money.html"]').textContent = translations[lang]["header-link1"];
-    document.querySelector('a[href="perevod.html"]').textContent = translations[lang]["header-link2"];
-    document.querySelector('a[href="suport.html"]').textContent = translations[lang]["header-link3"];
-    document.querySelector(".text").textContent = translations[lang]["main-title"];
-    document.querySelector(".subtitle").textContent = translations[lang]["main-subtitle"];
-    document.querySelector(".custom-btn span").textContent = translations[lang]["card-button"];
-    document.querySelector(".block-title2").textContent = translations[lang]["service1"];
-    document.querySelector(".block-title3").textContent = translations[lang]["service2"];
-    document.querySelector(".block-title4").textContent = translations[lang]["service3"];
-    document.querySelector(".footer-bottom p").textContent = translations[lang]["footer-note"];
-    document.querySelector(".footer-bottom:last-child p").textContent = translations[lang]["footer-bottom"];
-}
 
 </script>
 </body>

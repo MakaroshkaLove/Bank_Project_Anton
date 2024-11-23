@@ -1,20 +1,41 @@
-{
-    "greeting": "Hello",
-    "farewell": "Goodbye",
-    "currency_rates": "Currency Rates",
-    "transfers": "Transfers and Top-ups",
-    "support": "Support",
-    "debit_card_description": "Lime debit card cashback in hryvnia on everything",
-    "subtitle": "Choose categories with increased cashback when issuing the card before October 31. Get 10% instead of 5% until the end of November.",
-    "open_card": "Open a card",
-    "debit_cards": "Debit Cards",
-    "credit_cards": "Credit Cards",
-    "loans": "Loans",
-    "deposits": "Deposits",
-    "investments": "Investments",
-    "recommended_products": "Recommended Products",
-    "services_title": "Services and Features",
-    "additional_services": "Additional Services",
-    "help": "Help",
-    "reviews": "F-Bank Reviews"
-}
+<div class="transfer-container">
+    <h1 data-translate="Переказ з карти на карту">Переказ з карти на карту</h1>
+    <p data-translate="Будь ласка, заповніть усі поля та натисніть «Переказати»">Будь ласка, заповніть усі поля та натисніть «Переказати»</p>
+    
+    <div class="transfer-forms">
+        <div class="form-section">
+            <h2 data-translate="З карти">З карти</h2>
+            <input type="text" id="from-card" placeholder="Номер карти" maxlength="19" oninput="formatCardNumber(this)">
+            <p data-translate="16 цифр (4 групи по 4 цифри)">16 цифр (4 групи по 4 цифри)</p>
+        </div>
+        <div class="arrow" data-translate="→">→</div>
+        <div class="form-section">
+            <h2 data-translate="На карту">На карту</h2>
+            <input type="text" id="to-card" placeholder="Номер карти" maxlength="19" oninput="formatCardNumber(this)">
+            <p data-translate="16 цифр (4 групи по 4 цифри)">16 цифр (4 групи по 4 цифри)</p>
+        </div>
+    </div>
+
+    <div class="amount-section">
+        <input type="number" id="amount" placeholder="Сума, ₴" min="1" data-translate="Сума, ₴">
+    </div>
+
+    <button class="transfer-button" onclick="processTransfer()" data-translate="Переказати">Переказати</button>
+
+    <p id="status" data-translate="Статус операції буде показано тут"></p>
+
+    <div id="money" class="money" style="display: none;" data-translate="💸">💸</div>
+</div>
+
+<footer>
+    <div class="footer-line"></div>
+    <div class="footer-top">
+        <div class="logo-block">
+            <img src="IMG/bank-logo-smaller.png" alt="Логотип" class="logo">
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p data-translate="АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.">АТ «FБанк» використовує файли «cookie» з метою персоналізації сервісів та підвищення зручності користування вебсайтом.</p>
+        <p data-translate="© 2024-2024, АТ «FБанк», офіційний сайт.">© 2024-2024, АТ «FБанк», офіційний сайт.</p>
+    </div>
+</footer>
