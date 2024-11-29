@@ -54,6 +54,7 @@ app.post('/login', (req, res) => {
 
         if (user) {
             res.status(200).send('Авторизація успішна');
+            res.redirect('/room.html');
         } else {
             res.status(401).send("Неправильне ім'я користувача або пароль");
         }

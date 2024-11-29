@@ -1,34 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>особистий кабінет - F-BANK</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="img/jpeg" href="img/logoo.jpg">
+    <title>Особистий кабінет банку</title>
+    <link rel="stylesheet" href="style5.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <h1 id="welcome-message"></h1>
-    </header>
-    <main>
-        <p>
-            Це ваш особистий кабінет.</p>
-        <button id="logout-button">Выйти</button>
-    </main>
-    <script>
-        const currentUser = localStorage.getItem('currentUser');
-        if (!currentUser) {
-            window.location.href = 'login.html';
-        } else {
-            document.getElementById('welcome-message').innerText = `Ласкаво просимо, ${currentUser}!`;
-        }
+    <div class="sidebar">
+        <div class="sidebar-logo">F-BANK</div>
+        <ul class="sidebar-menu">
+            <li onclick="showSection('dashboard')">Головна</li>
+            <li onclick="showSection('accounts')">Рахунки</li>
+            <li onclick="showSection('transfers')">Перекази</li>
+            <li onclick="showSection('payments')">Платежі</li>
+            <li onclick="showSection('statistics')">Статистика</li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <!-- Головна сторінка -->
+        <section id="dashboard" class="content-section active">
+            <div class="dashboard-container">
+                <div class="profile-card">
+                    <h1>Ласкаво просимо, Іван Іванов</h1>
+                    <h3>Деталі картки</h3>
+                    <p><strong>Номер картки:</strong> 1234 5678 9012 3456</p>
+                    <p><strong>CVV:</strong> 123</p>
+                    <p><strong>Термін дії:</strong> 12/25</p>
+                </div>
+                <div id="accounts-container" class="accounts-transactions"></div>
+                <div id="transaction-list" class="transaction-list"></div>
+            </div>
+        </section>
 
-        document.getElementById('logout-button').addEventListener('click', function() {
-            localStorage.removeItem('currentUser');
-            window.location.href = 'login.html';
-        });
-    </script>
+        <!-- Сторінка "Рахунки" -->
+        <section id="accounts" class="content-section">
+            <h1>Рахунки</h1>
+            <form id="add-account-form">
+                <label for="account-name">Назва рахунку:</label>
+                <input type="text" id="account-name" required>
+                <label for="initial-balance">Початковий баланс:</label>
+                <input type="number" id="initial-balance" required>
+                <button type="submit">Додати рахунок</button>
+            </form>
+            <div id="accounts-container"></div>
+        </section>
 
+        <!-- Сторінка "Перекази" -->
+        <section id="transfers" class="content-section">
+            <h1>Перекази</h1>
+            <form id="transfer-form">
+                <label for="from-account">З якого рахунку:</label>
+                <select id="from-account" name="from-account"></select>
+                <label for="to-account">На який рахунок:</label>
+                <select id="to-account" name="to-account"></select>
+                <label for="amount">Сума:</label>
+                <input type="number" id="amount" name="amount" required>
+                <button type="submit">Переказати</button>
+            </form>
+        </section>
+
+        <!-- Сторінка "Платежі" -->
+        <section id="payments" class="content-section">
+            <h1>Платежі</h1>
+            <form id="payment-form">
+                <label for="payment-account">З якого рахунку:</label>
+                <select id="payment-account" name="payment-account"></select>
+            
+                <label for="service">Послуга:</label>
+                <select id="service" name="service">
+                    <option>Комунальні послуги</option>
+                    <option>Інтернет</option>
+                    <option>Мобільний зв'язок</option>
+                </select>
+            
+                <label for="amount">Сума:</label>
+                <input type="number" id="amount" name="amount" required>
+            
+                <button type="submit">Сплатити</button>
+            </form>
+        </section>
+
+        <!-- Сторінка "Статистика" -->
+        <section id="statistics" class="content-section">
+            <h1>Статистика витрат</h1>
+            <canvas id="expensesChart" width="400" height="400"></canvas>
+        </section>
+    </div>
+
+    <script src="script1.js"></script>
 </body>
 </html>
