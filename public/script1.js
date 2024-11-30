@@ -9,6 +9,9 @@ function updatePaymentAccounts() {
     accounts.forEach(account => {
         paymentAccountSelect.innerHTML += `<option value="${account.name}">${account.name} (Баланс: ${account.balance.toFixed(2)} ₴)</option>`;
     });
+
+
+    console.log("Список рахунків для платежів оновлено:", accounts, paymentAccountSelect.innerHTML);
 }
 
 function updateChart() {
@@ -67,24 +70,56 @@ function updateExpenseStatistics(service, amount) {
     updateChart();
 }
 
+
+
 document.getElementById("payment-form").addEventListener("submit", e => {
     e.preventDefault();
-    const service = document.getElementById("service").value;
-    const amount = parseFloat(document.getElementById("amount").value);
-    const currentAccount = accounts[0];
 
-    if (amount > 0 && currentAccount.balance >= amount) {
-        currentAccount.balance -= amount;
+    const accountName = document.getElementById("payment-account").value;
+    const service = document.getElementById("service").value;
+    const amountInput = document.getElementById("amount")?.value?.trim() || ""; 
+    console.log("Текущее значение поля amount:", amountInput || "Пусто"); 
+    const amount = parseFloat(amountInput); 
+
+    console.log("Текущая сумма перед отправкой:", document.getElementById("amount").value); 
+    console.log("Текущая сумма (amountInput):", amountInput);  
+    console.log("Преобразованное значение суммы (amount):", amount);  
+
+    if (!accountName) {
+        alert("Виберіть рахунок для оплати!");
+        return;
+    }
+
+    if (isNaN(amount) || amount <= 0) {
+        alert("Введіть коректну суму!");
+        return;
+    }
+
+    const selectedAccount = accounts.find(account => account.name === accountName);
+
+    if (!selectedAccount) {
+        alert("Рахунок не знайдено!");
+        return;
+    }
+
+    console.log("Залишок рахунку:", selectedAccount.balance);
+
+    if (selectedAccount.balance >= amount) {
+        selectedAccount.balance -= amount;
         transactions.push({ description: `Оплата за ${service}`, amount: -amount, type: "expense" });
 
         updateAccounts();
         updateTransactionList();
-        updateExpenseStatistics(service, amount); 
+        updateExpenseStatistics(service, amount);
         alert("Оплату виконано!");
     } else {
-        alert("Недостатньо коштів або некоректна сума!");
+        alert("Недостатньо коштів!");
     }
 });
+
+
+
+
 
 const transactions = [];
 const accounts = [
@@ -96,8 +131,22 @@ function showSection(sectionId) {
     document.querySelectorAll(".content-section").forEach(section => {
         section.classList.remove("active");
     });
+
     document.getElementById(sectionId).classList.add("active");
+
+    if (sectionId === "payments") {
+        const paymentForm = document.getElementById("payment-form");
+        paymentForm.reset();
+
+        document.getElementById("amount").value = "";  
+        document.getElementById("payment-account").selectedIndex = 0;  
+
+        console.log("Форма платежів очищена");
+    }
 }
+
+
+
 
 function updateTransactionList() {
     const transactionList = document.getElementById("transaction-list");
@@ -145,7 +194,7 @@ document.getElementById("add-account-form").addEventListener("submit", e => {
     if (name && !isNaN(balance)) {
         accounts.push({ name, balance });
         updateAccounts();
-        updatePaymentAccounts(); 
+        updatePaymentAccounts();
         alert("Рахунок додано!");
         e.target.reset();
     } else {
@@ -171,8 +220,9 @@ document.getElementById("transfer-form").addEventListener("submit", e => {
             transactions.push({ description: `Переказ з ${from}`, amount: -amount, type: "expense" });
             transactions.push({ description: `Переказ на ${to}`, amount: amount, type: "income" });
 
-            updateAccounts(); 
+            updateAccounts();
             updateTransactionList();
+            updatePaymentAccounts();
             alert("Переказ виконано!");
         } else {
             alert("Недостатньо коштів!");
@@ -181,47 +231,6 @@ document.getElementById("transfer-form").addEventListener("submit", e => {
         alert("Введіть коректні дані!");
     }
 });
-
-document.getElementById("payment-form").addEventListener("submit", e => {
-    e.preventDefault();
-    const service = document.getElementById("service").value;
-    const amount = parseFloat(document.getElementById("amount").value);
-    const currentAccount = accounts[0];
-
-    if (amount > 0 && currentAccount.balance >= amount) {
-        currentAccount.balance -= amount;
-        transactions.push({ description: `Оплата за ${service}`, amount: -amount, type: "expense" });
-
-        updateAccounts();
-        updateTransactionList();
-        alert("Оплату виконано!");
-    } else {
-        alert("Недостатньо коштів або некоректна сума!");
-    }
-});
-
-function updateAccounts() {
-    const fromSelect = document.getElementById("from-account");
-    const toSelect = document.getElementById("to-account");
-    const accountsContainer = document.getElementById("accounts-container");
-
-    fromSelect.innerHTML = "";
-    toSelect.innerHTML = "";
-    accountsContainer.innerHTML = "";
-
-    accounts.forEach(account => {
-        fromSelect.innerHTML += `<option>${account.name}</option>`;
-        toSelect.innerHTML += `<option>${account.name}</option>`;
-
-        const accountItem = document.createElement("div");
-        accountItem.className = "account-card";
-        accountItem.innerHTML = `
-            <h3>${account.name}</h3>
-            <p>Баланс: ${account.balance.toFixed(2)} ₴</p>
-        `;
-        accountsContainer.appendChild(accountItem);
-    });
-}
 
 document.addEventListener("DOMContentLoaded", () => {
     updateAccounts();

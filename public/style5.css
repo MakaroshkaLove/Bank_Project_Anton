@@ -112,3 +112,62 @@ form button {
 form button:hover {
     background-color: #29b94d;
 }
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .sidebar-logo {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .sidebar-menu li {
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .content-section {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .dashboard-container {
+        gap: 15px;
+    }
+
+    .profile-card, 
+    .account-card, 
+    .transaction-list {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    form input, 
+    form select, 
+    form button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    form button {
+        font-size: 18px;
+    }
+
+    .transaction-item {
+        padding: 10px;
+    }
+}

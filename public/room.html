@@ -14,7 +14,6 @@
             <li onclick="showSection('dashboard')">Головна</li>
             <li onclick="showSection('accounts')">Рахунки</li>
             <li onclick="showSection('transfers')">Перекази</li>
-            <li onclick="showSection('payments')">Платежі</li>
             <li onclick="showSection('statistics')">Статистика</li>
         </ul>
     </div>
@@ -24,7 +23,7 @@
         <section id="dashboard" class="content-section active">
             <div class="dashboard-container">
                 <div class="profile-card">
-                    <h1>Ласкаво просимо, Іван Іванов</h1>
+                    <h1>Ласкаво просимо</h1>
                     <h3>Деталі картки</h3>
                     <p><strong>Номер картки:</strong> 1234 5678 9012 3456</p>
                     <p><strong>CVV:</strong> 123</p>
@@ -62,7 +61,26 @@
             </form>
         </section>
 
-        <!-- Сторінка "Платежі" -->
+
+        <!-- Сторінка "Статистика" -->
+        <section id="statistics" class="content-section">
+            <h1>Статистика витрат</h1>
+            <canvas id="expensesChart" width="400" height="400"></canvas>
+        </section>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+    
+        <!-- Сторінка "Платежі"Її немає просто якщо прибираю щось нічого не працює  -->
         <section id="payments" class="content-section">
             <h1>Платежі</h1>
             <form id="payment-form">
@@ -83,13 +101,22 @@
             </form>
         </section>
 
-        <!-- Сторінка "Статистика" -->
-        <section id="statistics" class="content-section">
-            <h1>Статистика витрат</h1>
-            <canvas id="expensesChart" width="400" height="400"></canvas>
-        </section>
-    </div>
 
-    <script src="script1.js"></script>
+
+
+
+
+
+
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM полностью загружен. Инициализация...");
+            updateAccounts();
+            updatePaymentAccounts();
+            console.log("Страница готова к работе.");
+        });
+        </script>
+        <script src="script1.js"></script>
+        
 </body>
 </html>
